@@ -5,53 +5,101 @@
 ### Project Structure
 book-api/
 │
+
 ├── server.js
+
 ├── package.json
+
 ├── package-lock.json
+
 ├── .env
+
 ├── .gitignore
+
 │
+
 ├── config/
+
 │   └── db.js
+
 │
+
 ├── controllers/
+
 │   ├── authController.js
+
 │   ├── bookController.js
+
 │   └── commentController.js
+
 │
+
 ├── middleware/
+
 │   ├── authMiddleware.js
+
 │   ├── adminMiddleware.js
+
 │   ├── errorMiddleware.js
+
 │   └── uploadMiddleware.js
+
 │
+
 ├── models/
+
 │   ├── User.js
+
 │   ├── Book.js
+
 │   └── Comment.js
+
 │
+
 ├── routes/
+
 │   ├── authRoutes.js
+
 │   ├── bookRoutes.js
+
 │   └── commentRoutes.js
+
 │
+
 ├── public/
+
 │   ├── index.html
+
 │   ├── login.html
+
 │   ├── register.html
+
 │   ├── book.html
+
 │   │
+
 │   ├── css/
+
 │   │   └── style.css
+
 │   │
+
 │   └── js/
+
 │       ├── auth.js
+
 │       ├── books.js
+
 │       └── book.js
+
 │
+
 ├── uploads/
+
 │   └── books/
+
 │
+
 └── README.md
 
 
