@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>register</h1>
+
+  <input id="email" placeholder="email">
+  <input id="password" type="password" placeholder="password">
+
+  <label style="display:block; margin-bottom:10px;">
+    <input type="checkbox" id="isAdmin">
+    register as admin (for testing)
+  </label>
+
+  <button onclick="register()">register</button>
+
+  <p>already have account? <a href="/login.html">login</a></p>
+</div>
+
+
+<script src="/js/auth.js"></script>
+<script>
+async function register() {
+  const email = document.getElementById('email').value.trim()
+  const password = document.getElementById('password').value.trim()
+  const isAdmin = document.getElementById('isAdmin')?.checked
+
+  if (!email || !password) {
+    alert('email and password are required')
+    return
+  }
+
+  const res = await fetch('/api/auth/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email,
+      password,
+      role: isAdmin ? 'admin' : 'user'
+    })
+  })
+
+  const data = await res.json()
+
+  if (!res.ok) {
+    alert(data.message || 'registration failed')
+    return
+  }
+
+  alert('registration successful, please login')
+  window.location.href = '/login.html'
+}
+</script>
+
+
+</body>
+</html>
