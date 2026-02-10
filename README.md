@@ -4,58 +4,56 @@
 
 ### Project Structure
 book-api/
-
 │
-
 ├── server.js
-
 ├── package.json
-
+├── package-lock.json
 ├── .env
-
 ├── .gitignore
-
 │
-
 ├── config/
-
 │   └── db.js
-
 │
-
-├── models/
-
-│   └── Book.js
-
-│
-
-├── routes/
-
-│   └── books.js
-
-│
-
 ├── controllers/
-
-│   └── bookController.js
-
+│   ├── authController.js
+│   ├── bookController.js
+│   └── commentController.js
 │
-
-├── middlewares/
-
-│   └── errorHandler.js
-
+├── middleware/
+│   ├── authMiddleware.js
+│   ├── adminMiddleware.js
+│   ├── errorMiddleware.js
+│   └── uploadMiddleware.js
 │
-
+├── models/
+│   ├── User.js
+│   ├── Book.js
+│   └── Comment.js
+│
+├── routes/
+│   ├── authRoutes.js
+│   ├── bookRoutes.js
+│   └── commentRoutes.js
+│
 ├── public/
-
 │   ├── index.html
-
-│   └── script.js
-
+│   ├── login.html
+│   ├── register.html
+│   ├── book.html
+│   │
+│   ├── css/
+│   │   └── style.css
+│   │
+│   └── js/
+│       ├── auth.js
+│       ├── books.js
+│       └── book.js
 │
-
+├── uploads/
+│   └── books/
+│
 └── README.md
+
 
 
 ### Open the frontend in your browser:
@@ -74,48 +72,20 @@ PUT	/api/books/:id	Update a book by ID
 
 DELETE	/api/books/:id	Delete a book by ID
 
-## API Examples (Postman)
- Create a Book (POST)
+## API Examples 
+ login
 
-<img src="photo_2026-01-18_22-28-57.jpg">
+<img src="photo_2026-02-10_21-14-15.jpg">
 
- Get All Books (GET)
+ register
 
-<img src="photo_2026-01-18_22-28-53.jpg">
+<img src="photo_2026-02-10_21-14-17.jpg">
 
- Get Book by ID (GET)
+ main page + create book (only admin) + delete book (only admin)
 
-<img src="photo_2026-01-18_22-28-50.jpg">
+<img src="photo_2026-02-10_21-14-19.jpg">
 
- Update Book (PUT)
+ view book
 
-<img src="photo_2026-01-18_22-28-50.jpg">
-
- Delete Book (DELETE)
-
-<img src="photo_2026-01-18_22-28-43.jpg">
-
- WEB-page
-
-<img src="photo_2026-01-18_22-28-46.jpg">
-
- Register User (POST)
-
-<img src="photo_2026-02-01_20-26-56.jpg">
-
- Register Admin (POST)
-
-<img src="photo_2026-02-01_20-26-58.jpg">
-
- Login User (POST)
-
-<img src="photo_2026-02-01_20-26-59.jpg">
-
- Login Admin (POST)
-
-<img src="photo_2026-02-01_20-27-00.jpg">
-
- Add Book ONLY ADMIN (POST)
-
-<img src="photo_2026-02-01_20-27-02.jpg">
+<img src="photo_2026-02-10_21-14-21.jpg">
 
